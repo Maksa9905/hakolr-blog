@@ -1,17 +1,13 @@
-import React from "react";
-import { Counter } from "./Counter.js";
+import { HomePage } from "#pages/HomePage/ui/HomePage.jsx";
+import { useState } from "react";
+import { useData } from "vike-react/useData";
 
 export default function Page() {
-  return (
-    <>
-      <h1>My Vike app</h1>
-      This page is:
-      <ul>
-        <li>Rendered to HTML.</li>
-        <li>
-          Interactive. <Counter />
-        </li>
-      </ul>
-    </>
-  );
+    // const data = useData();
+    const [name, setName] = useState('')
+    // window.location.search = `?name=${name}`
+
+    return (
+        <HomePage />
+    )
 }
