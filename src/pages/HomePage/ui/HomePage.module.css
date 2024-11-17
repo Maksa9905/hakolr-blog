@@ -4,7 +4,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--grey1);
+}
+
+.home-page__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }

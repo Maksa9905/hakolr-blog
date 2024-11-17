@@ -4,9 +4,9 @@ export interface ButtonIconProps extends React.ButtonHTMLAttributes<HTMLButtonEl
     children: React.ReactNode,
 }
 
-export const IconButton = ({ children, ...props }: ButtonIconProps) => {
+export const IconButton = ({ children, className,  ...props }: ButtonIconProps) => {
     return (
-        <button {...props} className={styles.button}>
+        <button {...props} className={`${styles.button} ${className}`}>
             {children}
         </button>
     );

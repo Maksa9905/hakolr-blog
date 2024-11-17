@@ -1,4 +1,9 @@
 
 .link {
     text-decoration: none;
+    color: var(--black);
+}
+
+.link:hover {
+    color: var(--red)
 }
