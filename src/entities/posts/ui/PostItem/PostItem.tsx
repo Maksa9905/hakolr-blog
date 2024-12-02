@@ -13,9 +13,10 @@ type Props = {
   dislikes: number;
   authorId: string;
   authorName: string;
+  _id: string;
 };
 
-export const PostItem = ({ title, content, date, views, likes, dislikes, authorName, authorId }: Props) => {
+export const PostItem = ({ title, content, date, views, likes, dislikes, authorName, authorId, _id }: Props) => {
   const [action, setAction] = useState(PostAction.IDE);
 
   const handleLikeClick = () => {
@@ -38,7 +39,11 @@ export const PostItem = ({ title, content, date, views, likes, dislikes, authorN
 
   return (
     <div className={styles.post}>
-      <h3 className={styles.title}>{title} - <Link href={'/user/' + authorId}>{authorName}</Link></h3>
+      <h3 className={styles.title}>
+        <Link href={'/posts/' + _id}>{title}</Link>
+        {' '} - {' '} 
+        <Link href={'/user/' + authorId}>{authorName}</Link>
+      </h3>
       <p className={styles.content}>
         {content}
       </p>
