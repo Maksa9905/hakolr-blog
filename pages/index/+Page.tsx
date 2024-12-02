@@ -1,13 +1,18 @@
-import { HomePage } from "#pages/HomePage/ui/HomePage.jsx";
-import { useState } from "react";
+import { Post } from "#entities/posts";
+import { HomePage } from "#pages/HomePage/ui";
+import { WithPagination } from "#shared/model";
 import { useData } from "vike-react/useData";
 
 export default function Page() {
-    // const data = useData();
-    const [name, setName] = useState('')
-    // window.location.search = `?name=${name}`
+    const {data: posts, total, limit, page}: WithPagination<Post[]> = useData();
+
+    const pagination = {
+        page,
+        total,
+        limit
+    }
 
     return (
-        <HomePage />
+        <HomePage posts={posts} pagination={pagination} />
     )
 }

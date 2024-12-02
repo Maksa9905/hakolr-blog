@@ -1,2 +1,6 @@
 export * from './IconButton'
 export * from './Link'
+export * from './Pagination'
+export * from './PaginationItem'
+export * from './PageContainer'
+export * from './Page'

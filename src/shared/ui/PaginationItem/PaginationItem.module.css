@@ -1,0 +1,18 @@
+
+.page-container {
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 1px solid var(--grey5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey9);
+    cursor: pointer;
+}
+
+
+.page-container.selected {
+    border: 1.5px solid var(--grey7);
+}
