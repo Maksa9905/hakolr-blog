@@ -1,6 +1,6 @@
-import { DefaultIconProps } from "./model";
+import { DefaultIconProps } from './model'
 
-export const EyeIcon = ({ color, size}: DefaultIconProps) => {
+export const EyeIcon = ({ color, size }: DefaultIconProps) => {
   return (
     <svg
       fill={color}
@@ -13,8 +13,15 @@ export const EyeIcon = ({ color, size}: DefaultIconProps) => {
       width={`${size || 442.04}`}
       height={`${size || 442.04}`}
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g
+        id="SVGRepo_bgCarrier"
+        stroke-width="0"
+      ></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></g>
       <g id="SVGRepo_iconCarrier">
         <g>
           <g>
@@ -29,5 +36,5 @@ export const EyeIcon = ({ color, size}: DefaultIconProps) => {
         </g>
       </g>
     </svg>
-  );
-};
+  )
+}

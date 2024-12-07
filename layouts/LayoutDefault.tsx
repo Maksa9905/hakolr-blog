@@ -1,16 +1,18 @@
-import "./style.css";
+import './style.css'
 
-import React from "react";
-import { Header } from "#widgets/Header";
-import { Page } from "#shared/ui";
+import React from 'react'
+import { Header } from '#widgets/Header'
+import { Page } from '#shared/ui'
 
-export default function LayoutDefault({ children }: { children: React.ReactNode }) {
+export default function LayoutDefault({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-      <>
-        <Header />
-        <Page>
-            {children}
-        </Page>
-      </>
-  );
+    <>
+      <Header />
+      <Page>{children}</Page>
+    </>
+  )
 }

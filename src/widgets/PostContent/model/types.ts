@@ -1,3 +1,3 @@
 export interface PostContentProps {
-    content: string;
+  content: string
 }

@@ -1,5 +1,5 @@
 export interface PageHeaderProps {
-    title: string,
-    description: string,
-    date: string,
+  title: string
+  description: string
+  date: string
 }

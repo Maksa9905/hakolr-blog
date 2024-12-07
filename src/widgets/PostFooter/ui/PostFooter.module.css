@@ -1,37 +1,37 @@
 .post-footer-conainer {
-    width: 100%;
-    background-color: var(--white);
-    margin-top: 10px;
-    padding: 15px 20px;
+  width: 100%;
+  background-color: var(--white);
+  margin-top: 10px;
+  padding: 15px 20px;
 
-    display: grid;
-    column-gap: 10px;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
 }
 
 .title {
-    grid-column: 1;
-    font-size: 20px;
+  grid-column: 1;
+  font-size: 20px;
 }
 
 .description {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column: 1;
 }
 
 .author {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    grid-column: 2;
-    margin: auto 0;
-    cursor: pointer;
-    text-align: right;
-    font-size: 24px;
-    font-weight: bold;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column: 2;
+  margin: auto 0;
+  cursor: pointer;
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .author:hover {
-    color: var(--red);
+  color: var(--red);
 }

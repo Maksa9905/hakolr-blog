@@ -1,28 +1,28 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 25px;
-    border-bottom: 0.25px solid #cfa2aa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px;
+  border-bottom: 0.25px solid #cfa2aa;
 }
 
 .title {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 10px
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
 }
 
 .logotype {
-    font-family: var(--pixel-anchor-jack);
-    font-size: 30px;
-    font-weight: bold;
-    transition: 3s;
-    line-height: 1;
+  font-family: var(--pixel-anchor-jack);
+  font-size: 30px;
+  font-weight: bold;
+  transition: 3s;
+  line-height: 1;
 }
 
 @media screen and (max-width: 500px) {
-    .logotype {
-        display: none;
-    }
+  .logotype {
+    display: none;
+  }
 }

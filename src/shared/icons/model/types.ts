@@ -1,5 +1,5 @@
 export interface DefaultIconProps {
-    color: string;
-    transitionDuration?: number;
-    size?: number;
+  color: string
+  transitionDuration?: number
+  size?: number
 }

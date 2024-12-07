@@ -1,6 +1,10 @@
-import { DefaultIconProps } from "./model";
+import { DefaultIconProps } from './model'
 
-export const MenuIcon = ({ color, transitionDuration, size }: DefaultIconProps) => {
+export const MenuIcon = ({
+  color,
+  transitionDuration,
+  size,
+}: DefaultIconProps) => {
   return (
     <svg
       width={`${size || 20}`}
@@ -9,8 +13,15 @@ export const MenuIcon = ({ color, transitionDuration, size }: DefaultIconProps) 
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g
+        id="SVGRepo_bgCarrier"
+        stroke-width="0"
+      ></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></g>
       <g id="SVGRepo_iconCarrier">
         <path
           style={{ transition: `all ${transitionDuration || 3}s` }}
@@ -20,5 +31,5 @@ export const MenuIcon = ({ color, transitionDuration, size }: DefaultIconProps) 
         ></path>
       </g>
     </svg>
-  );
-};
+  )
+}

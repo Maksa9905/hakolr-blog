@@ -1,8 +1,7 @@
-
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: calc(100vh - 94.5px);
-    background-color: var(--grey1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 94.5px);
+  background-color: var(--grey1);
 }
