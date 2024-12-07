@@ -1,7 +1,3 @@
 export const PostsWidget = () => {
-    return(
-        <div>
-            
-        </div>
-    )
+  return <div></div>
 }

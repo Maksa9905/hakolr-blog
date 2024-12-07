@@ -4,18 +4,35 @@ import { PostHeader } from '#widgets/PostHeader'
 import { PostContent } from '#widgets/PostContent'
 import { PostFooter } from '#widgets/PostFooter'
 
-export const PostPage = ({content}: {content: string}) => {
-    const date = new Date().toISOString();
+type Props = {
+  content: string
+  title: string
+  description: string
+  date: string
+  authorId: string
+  authorName: string
+}
 
-    return(
-        <PageContainer>
-            <PostHeader 
-                title='Альфа версия Evolution design linter' 
-                description='Если хотите помочь нам с разработкой, присоединяйтесь в сообщество' 
-                date={date}
-            />
-            <PostContent content={content} />
-            <PostFooter />
-        </PageContainer>
-    )
+export const PostPage = ({
+  content,
+  title,
+  description,
+  date,
+  authorId,
+  authorName,
+}: Props) => {
+  return (
+    <PageContainer>
+      <PostHeader
+        title={title}
+        description={description}
+        date={date}
+      />
+      <PostContent content={content} />
+      <PostFooter
+        authorId={authorId}
+        authorName={authorName}
+      />
+    </PageContainer>
+  )
 }

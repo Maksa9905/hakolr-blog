@@ -1,11 +1,9 @@
-import { PostPage } from "#pages/PostPage";
-import { useData } from "vike-react/useData"
-
+import { DetailPostResponse } from '#entities/posts/api'
+import { PostPage } from '#pages/PostPage'
+import { useData } from 'vike-react/useData'
 
 export const Page = () => {
-    const { content } = useData<{content: string}>()
+  const data = useData<DetailPostResponse>()
 
-    return(
-        <PostPage content={content} />
-    )
+  return <PostPage {...data} />
 }
