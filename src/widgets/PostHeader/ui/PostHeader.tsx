@@ -1,8 +1,11 @@
 import { EyeIcon } from '#shared/icons'
-import { PageHeaderProps } from '../model/types'
+import { useUnit } from 'effector-react'
 import styles from './PostHeader.module.css'
+import { $post } from '#store/post'
 
-export const PostHeader = ({ title, description, date }: PageHeaderProps) => {
+export const PostHeader = () => {
+  const { title, description, date, views } = useUnit($post)
+
   return (
     <div className={styles['post-header']}>
       <h2 className={styles['title']}>{title}</h2>
@@ -13,7 +16,7 @@ export const PostHeader = ({ title, description, date }: PageHeaderProps) => {
           color="var(--grey5)"
           size={20}
         />{' '}
-        20
+        {views}
       </p>
     </div>
   )

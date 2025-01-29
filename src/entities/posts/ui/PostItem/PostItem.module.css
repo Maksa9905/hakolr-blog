@@ -2,8 +2,8 @@
   width: 100%;
   background-color: var(--white);
   display: grid;
-  grid-template-columns: 120px 1fr 240px;
-  grid-template-rows: 1fr 1fr 30px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto 30px;
   padding: 15px;
   gap: 15px;
 }
