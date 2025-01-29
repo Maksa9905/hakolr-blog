@@ -1,21 +1,20 @@
 import { Link } from '#shared/ui'
+import { $post } from '#store/post'
+import { useUnit } from 'effector-react'
 import styles from './PostFooter.module.css'
 
-export const PostFooter = ({
-  authorId,
-  authorName,
-}: {
-  authorId: string
-  authorName: string
-}) => {
+export const PostFooter = () => {
+  const { authorId, authorName } = useUnit($post)
+
   return (
     <div className={styles['post-footer-conainer']}>
       <h2 className={styles['title']}>Понравилась статья?</h2>
-      <div className={styles['author']}>
-        <p>
-          <Link href={authorId}>{authorName}</Link>
-        </p>
-      </div>
+      <Link
+        className={styles['author']}
+        href={authorId}
+      >
+        {authorName}
+      </Link>
       <a className={styles['description']}>
         Подпишитесь на автора, чтобы не пропустить новые статьи!
       </a>

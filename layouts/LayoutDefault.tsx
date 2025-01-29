@@ -2,7 +2,7 @@ import './style.css'
 
 import React from 'react'
 import { Header } from '#widgets/Header'
-import { Page } from '#shared/ui'
+import { PageContainer } from '#shared/ui'
 
 export default function LayoutDefault({
   children,
@@ -12,7 +12,7 @@ export default function LayoutDefault({
   return (
     <>
       <Header />
-      <Page>{children}</Page>
+      <PageContainer>{children}</PageContainer>
     </>
   )
 }

@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react'
 import styles from './Header.module.css'
 import { IconButton, Link } from '#shared/ui'
 import { JSIcon, MenuIcon } from '#shared/icons'
-
-const getRandomColor = () =>
-  '#' +
-  Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, '0')
+import { getRandomColor } from '#shared/lib'
 
 export const Header = () => {
   const [color, setColor] = useState(getRandomColor())
