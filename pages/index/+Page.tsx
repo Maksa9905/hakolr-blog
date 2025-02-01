@@ -1,6 +1,7 @@
 import { ShortPostResponse } from '#entities/posts/api'
 import { HomePage } from '#pages/HomePage/ui'
 import { WithPagination } from '#shared/model'
+import { PageContainer } from '#shared/ui/index.js'
 import { setPagination } from '#store/pagination'
 import { setPosts } from '#store/posts'
 import { useData } from 'vike-react/useData'
@@ -13,5 +14,9 @@ export default function Page() {
   setPosts(data.data)
   setPagination(pagination)
 
-  return <HomePage />
+  return (
+    <PageContainer>
+      <HomePage />
+    </PageContainer>
+  )
 }

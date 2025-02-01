@@ -1,18 +1,25 @@
-import { PageContainer } from '#shared/ui/index.js'
 import { TextField, Button } from '#shared/ui'
 import { useCallback } from 'react'
 import styles from './LoginPage.module.css'
 import { HakolrBlogIcon } from '#shared/icons/HakolrBlogIcon'
 import { login } from '#entities/users'
+import { redirect } from 'vike/abort'
+import { navigate } from 'vike/client/router'
 
 export const LoginPage = () => {
   const handleSubmit = useCallback(
-    (event: React.FormEvent<HTMLFormElement>) => {
+    async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
-      login({
-        email: event.currentTarget.email.value,
-        password: event.currentTarget.password.value,
-      })
+      try {
+        await login({
+          email: event.currentTarget.email.value,
+          password: event.currentTarget.password.value,
+        })
+
+        navigate('/')
+      } catch (error: any) {
+        alert(error.message)
+      }
     },
     [],
   )

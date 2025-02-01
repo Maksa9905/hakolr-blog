@@ -6,21 +6,18 @@ export const login = async (body: AuthBodyDto) => {
   const response = await axios.post('http://localhost:3001/api/login', body, {
     withCredentials: true,
   })
-
-  if (response.status === 200) throw redirect('/')
 }
 
-export const verify_token = async () => {
+export const verify_token = async (cookies?: Record<string, string>) => {
   try {
     const response = await axios.post(
       'http://localhost:3001/api/verify_token',
       {},
-      { withCredentials: true },
+      { headers: cookies },
     )
 
     return response.status === 200
   } catch (error) {
-    console.log(error)
     return false
   }
 }

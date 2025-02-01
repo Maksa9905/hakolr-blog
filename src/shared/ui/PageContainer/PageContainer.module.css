@@ -12,9 +12,11 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
   background-color: var(--grey1);
 }
 
 .page.with-header {
   min-height: calc(100vh - 94.5px);
+  margin-top: 95.2px;
 }

@@ -1,10 +1,9 @@
 import { PostList } from '#entities/posts'
-import { PageContainer, Pagination } from '#shared/ui'
+import { Pagination } from '#shared/ui'
 import { navigate } from 'vike/client/router'
 import { DEFAULT_LIMIT_PAGINATION } from '#shared/lib'
 import { useUnit } from 'effector-react'
 import { $pagination } from '#store/pagination'
-
 export const HomePage = () => {
   const handleChangePage = (page: number) => {
     navigate(`/?page=${page}&limit=${DEFAULT_LIMIT_PAGINATION}`)
@@ -13,7 +12,7 @@ export const HomePage = () => {
   const { page, total, limit } = useUnit($pagination)
 
   return (
-    <PageContainer>
+    <>
       <PostList />
       <Pagination
         page={page}
@@ -22,6 +21,6 @@ export const HomePage = () => {
         maxLength={5}
         onChange={handleChangePage}
       />
-    </PageContainer>
+    </>
   )
 }
