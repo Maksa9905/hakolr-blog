@@ -10,12 +10,10 @@ export const PageContainer = ({
   withHeader = true,
 }: PageContainerProps) => {
   return (
-    <div className={styles['page']}>
-      <div
-        className={`${styles['page-container']} ${withHeader ? styles['with-header'] : ''}`}
-      >
-        {children}
-      </div>
+    <div
+      className={`${withHeader ? styles['with-header'] : ''} ${styles['page']}`}
+    >
+      <div className={`${styles['page-container']}`}>{children}</div>
     </div>
   )
 }

@@ -1,9 +1,17 @@
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 25px;
-  border-bottom: 0.25px solid #cfa2aa;
+  border-bottom: 0.25px solid var(--grey4);
+  background-color: var(--white);
 }
 
 .title {

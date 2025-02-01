@@ -1,4 +1,3 @@
-import { PageContainer } from '#shared/ui/index.js'
 import './style.css'
 
 export default function LoginLayout({
@@ -6,5 +5,5 @@ export default function LoginLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <PageContainer>{children}</PageContainer>
+  return <>{children}</>
 }

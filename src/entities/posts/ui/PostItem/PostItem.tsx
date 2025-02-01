@@ -63,7 +63,8 @@ export const PostItem = ({
         >
           <LikeIcon
             selected={action === PostAction.LIKE}
-            color={'var(--grey4)'}
+            color={'var(--grey2)'}
+            selectedColor={'var(--grey5)'}
           />
         </IconButton>
         <IconButton
@@ -73,7 +74,8 @@ export const PostItem = ({
           <LikeIcon
             selected={action === PostAction.DISLIKE}
             rotate
-            color={'var(--grey4)'}
+            color={'var(--grey2)'}
+            selectedColor={'var(--grey5)'}
           />
         </IconButton>
         <span>

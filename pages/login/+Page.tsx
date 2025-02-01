@@ -1,7 +1,10 @@
-import { LoginPage } from "#pages/LoginPage"
+import { LoginPage } from '#pages/LoginPage'
+import { PageContainer } from '#shared/ui'
 
-export const Page = () => {  
+export const Page = () => {
   return (
-    <LoginPage />
+    <PageContainer withHeader={false}>
+      <LoginPage />
+    </PageContainer>
   )
 }
