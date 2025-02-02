@@ -1,4 +1,4 @@
-import { DefaultIconProps } from './model'
+import { DefaultIconProps } from '../../../../shared/icons/model'
 
 export type LikeIconProps = DefaultIconProps & {
   selected?: boolean

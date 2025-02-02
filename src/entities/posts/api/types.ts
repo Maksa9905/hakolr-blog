@@ -1,3 +1,4 @@
+import { Reaction } from '#entities/reactions/index.js'
 import { HTMLString, ISOString } from '#shared/model'
 
 export interface ShortPostResponse {
@@ -6,10 +7,17 @@ export interface ShortPostResponse {
   description: string
   date: ISOString
   views: number
-  likes: number
-  dislikes: number
-  authorId: string
-  authorName: string
+  reaction: Reaction
+  reactions: {
+    likes: number
+    dislikes: number
+    reactions: Reaction[]
+  }
+  author: {
+    _id: string
+    name: string
+    email: string
+  }
 }
 
 export interface DetailPostResponse extends ShortPostResponse {

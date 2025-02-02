@@ -8,8 +8,14 @@ export const PostList = () => {
 
   return (
     <div className={styles.postlist}>
-      {posts.map((post) => (
-        <PostItem {...post} />
+      {posts.map(({ author, ...post }) => (
+        <PostItem
+          {...post}
+          authorName={author.name}
+          statistics={post.reactions}
+          authorId={author._id}
+          reactions={post.reactions.reactions}
+        />
       ))}
     </div>
   )

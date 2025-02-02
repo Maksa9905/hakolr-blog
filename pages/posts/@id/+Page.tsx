@@ -5,9 +5,21 @@ import { setPost } from '#store/post'
 import { useData } from 'vike-react/useData'
 
 export const Page = () => {
-  const data = useData<DetailPostResponse>()
+  const {
+    reactions: { likes, dislikes, reactions },
+    ...data
+  } = useData<DetailPostResponse>()
 
-  setPost(data)
+  setPost({
+    statistics: {
+      likes,
+      dislikes,
+    },
+    reactions,
+    authorId: data.author._id,
+    authorName: data.author.name,
+    ...data,
+  })
 
   return (
     <PageContainer>

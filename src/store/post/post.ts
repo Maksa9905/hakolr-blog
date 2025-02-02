@@ -7,9 +7,13 @@ const defaultPost: Post = {
   description: '',
   content: '',
   date: '',
+  statistics: {
+    likes: 0,
+    dislikes: 0,
+  },
+  reaction: null,
+  reactions: [],
   views: 0,
-  likes: 0,
-  dislikes: 0,
   authorId: '',
   authorName: '',
 }

@@ -1,16 +1,25 @@
-import { LikeIcon } from '#shared/icons'
-import { IconButton, Link } from '#shared/ui'
-import { useState } from 'react'
+import { Link } from '#shared/ui'
+import { useCallback, useEffect, useState } from 'react'
 import styles from './PostItem.module.css'
-import { PostAction } from '../../model/types'
+import {
+  PostReactionsButton,
+  Reaction,
+  ReactionType,
+} from '#entities/reactions'
+import { add_reaction } from '#features/add-reaction/index.js'
+import { getCookies } from '#shared/lib/getCookies.js'
 
 type Props = {
   title: string
   description: string
   date: string
   views: number
-  likes: number
-  dislikes: number
+  statistics: {
+    likes: number
+    dislikes: number
+  }
+  reaction: Reaction | null
+  reactions: Reaction[]
   authorId: string
   authorName: string
   _id: string
@@ -21,31 +30,27 @@ export const PostItem = ({
   description,
   date,
   views,
-  likes,
-  dislikes,
+  statistics,
+  reaction,
   authorName,
   authorId,
   _id,
 }: Props) => {
-  const [action, setAction] = useState(PostAction.IDE)
+  const [action, setAction] = useState<ReactionType | null>(
+    reaction?.type || null,
+  )
 
-  const handleLikeClick = () => {
-    setAction((action) => {
-      if (action === PostAction.LIKE) {
-        return PostAction.IDE
-      }
-      return PostAction.LIKE
-    })
-  }
-
-  const handleDisLikeClick = () => {
-    setAction((action) => {
-      if (action === PostAction.DISLIKE) {
-        return PostAction.IDE
-      }
-      return PostAction.DISLIKE
-    })
-  }
+  const handleActionClick = useCallback(
+    async (value: ReactionType | null) => {
+      setAction(value)
+      const cookies = getCookies(document.cookie)
+      await add_reaction(
+        { postId: _id, type: value, _id: reaction?._id },
+        cookies,
+      )
+    },
+    [setAction],
+  )
 
   return (
     <div className={styles.post}>
@@ -56,32 +61,11 @@ export const PostItem = ({
       <p className={styles.content}>{description}</p>
       <p className={styles.date}>{new Date(date).toLocaleDateString()}</p>
       <p className={styles.views}>{views} просмотров</p>
-      <div className={styles.actions}>
-        <IconButton
-          className={styles.likeButton}
-          onClick={handleLikeClick}
-        >
-          <LikeIcon
-            selected={action === PostAction.LIKE}
-            color={'var(--grey2)'}
-            selectedColor={'var(--grey5)'}
-          />
-        </IconButton>
-        <IconButton
-          className={styles.likeButton}
-          onClick={handleDisLikeClick}
-        >
-          <LikeIcon
-            selected={action === PostAction.DISLIKE}
-            rotate
-            color={'var(--grey2)'}
-            selectedColor={'var(--grey5)'}
-          />
-        </IconButton>
-        <span>
-          {likes}/{dislikes}
-        </span>
-      </div>
+      <PostReactionsButton
+        value={action}
+        onClick={handleActionClick}
+        statisctics={statistics}
+      />
     </div>
   )
 }

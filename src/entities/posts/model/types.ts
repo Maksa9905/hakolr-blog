@@ -1,10 +1,5 @@
+import { Reaction } from '#entities/reactions'
 import { HTMLString, ISOString } from '#shared/model'
-
-export enum PostAction {
-  LIKE = 'like',
-  DISLIKE = 'dislike',
-  IDE = 'ide',
-}
 
 export interface Post {
   _id: string
@@ -13,8 +8,12 @@ export interface Post {
   content: HTMLString
   date: ISOString
   views: number
-  likes: number
-  dislikes: number
+  statistics: {
+    likes: number
+    dislikes: number
+  }
+  reaction: Reaction | null
+  reactions: Reaction[]
   authorId: string
   authorName: string
 }
