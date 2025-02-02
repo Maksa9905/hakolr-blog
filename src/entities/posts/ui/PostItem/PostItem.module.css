@@ -34,11 +34,3 @@
   grid-column: 3;
   text-align: right;
 }
-
-.actions {
-  grid-row: 3;
-  grid-column: 1;
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}

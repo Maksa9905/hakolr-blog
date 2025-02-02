@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { AuthBodyDto } from './types'
 import { redirect } from 'vike/abort'
+import { ReactionType } from '#entities/reactions'
 
 export const login = async (body: AuthBodyDto) => {
   const response = await axios.post('http://localhost:3001/api/login', body, {

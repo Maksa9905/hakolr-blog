@@ -5,12 +5,15 @@ import { PageContextClient } from 'vike/types'
 export const data = async (pageContext: PageContextClient) => {
   const searchParams = pageContext.urlParsed.search
 
-  const cookies = getCookies(pageContext)
+  const cookies = getCookies(pageContext?.headers?.cookie)
 
-  const response = await getPosts({
-    page: +searchParams.page,
-    limit: +searchParams.limit,
-  }, cookies)
+  const response = await getPosts(
+    {
+      page: +searchParams.page,
+      limit: +searchParams.limit,
+    },
+    cookies,
+  )
 
   return response
 }
