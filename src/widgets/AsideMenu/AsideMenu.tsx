@@ -10,9 +10,7 @@ export interface AsideMenuProps {
 
 export const AsideMenu = ({ asideMenuConfig, open }: AsideMenuProps) => {
   return (
-    <div
-      className={`${styles['menu']} ${open ? styles['opened'] : styles['closed']}`}
-    >
+    <div className={`${styles['menu']} ${!open && styles['closed']}`}>
       {asideMenuConfig.map((item) => (
         <AsideMenuItem {...item} />
       ))}

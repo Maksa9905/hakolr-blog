@@ -3,12 +3,12 @@
   flex-direction: column;
   gap: 10px;
   width: 400px;
-  height: 100%;
   padding: 10px;
   background-color: var(--grey1);
   border-left: 1px solid var(--grey5);
   right: 0;
   top: 95.2px;
+  height: calc(100vh - 95.2px);
   position: fixed;
   transform: translateX(0px);
   transition: 0.5s;

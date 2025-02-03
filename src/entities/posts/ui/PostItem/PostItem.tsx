@@ -40,6 +40,10 @@ export const PostItem = ({
     reaction?.type || null,
   )
 
+  useEffect(() => {
+    setAction(reaction?.type || null)
+  }, [reaction])
+
   const handleActionClick = useCallback(
     async (value: ReactionType | null) => {
       setAction(value)
