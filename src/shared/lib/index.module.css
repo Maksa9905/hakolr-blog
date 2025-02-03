@@ -18,11 +18,6 @@ body {
   --pixel-anchor-jack: 'pixel-anchor-jack';
 }
 
-.page-container {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 /* Pallete */
 
 body {
