@@ -23,3 +23,16 @@ export interface ShortPostResponse {
 export interface DetailPostResponse extends ShortPostResponse {
   content: HTMLString
 }
+
+export interface CreatePostDto {
+  title: string
+  description: string
+  content: string
+}
+
+export interface PostFormLabelsResponse {
+  _id: string
+  title: string
+  description: string
+  content: string
+}

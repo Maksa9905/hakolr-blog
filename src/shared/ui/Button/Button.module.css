@@ -8,3 +8,7 @@
   border: 1px solid var(--grey5);
   cursor: pointer;
 }
+
+.disabled {
+  color: var(--grey4);
+}

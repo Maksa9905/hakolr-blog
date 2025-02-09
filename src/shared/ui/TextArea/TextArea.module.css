@@ -1,0 +1,35 @@
+.textarea-container {
+  position: relative;
+  text-align: right;
+}
+
+.textarea {
+  resize: none;
+  padding: 0 10px;
+  outline: none;
+  width: 100%;
+  height: inherit;
+}
+
+.textarea.outlined {
+  border-radius: 4px;
+  background-color: var(--white);
+  border: 1px solid var(--grey4);
+}
+
+.textarea.bottomlined {
+  background-color: var(--white);
+  border: none;
+  border-bottom: 1px solid var(--grey4);
+}
+
+.textarea.filled {
+  border: none;
+  border-radius: 4px;
+  background-color: var(--grey4);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--grey4);
+}

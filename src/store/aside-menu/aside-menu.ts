@@ -1,6 +1,6 @@
-import { createEvent, createStore } from "effector";
+import { createEvent, createStore } from 'effector'
 
-export const $isOpen = createStore<boolean>(false)
+export const $isOpen = createStore<boolean>(false, { sid: 'asideMenu' })
 
 export const setIsOpen = createEvent<boolean>()
 

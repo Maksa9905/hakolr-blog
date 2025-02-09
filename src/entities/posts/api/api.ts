@@ -1,6 +1,11 @@
 import { DEFAULT_LIMIT_PAGINATION, DEFAULT_PAGE_PAGINATION } from '#shared/lib'
 import { PaginationType, WithPagination } from '#shared/model'
-import { DetailPostResponse, ShortPostResponse } from './types'
+import {
+  CreatePostDto,
+  DetailPostResponse,
+  PostFormLabelsResponse,
+  ShortPostResponse,
+} from './types'
 import RequestSender from '#app/api'
 
 export const getPosts = async (
@@ -31,4 +36,28 @@ export const getPostById = async (
   })
 
   return await response.data
+}
+
+export const createPost = async (
+  body: CreatePostDto,
+  cookies: Record<string, string>,
+) => {
+  const response = await RequestSender.send<DetailPostResponse>({
+    url: 'http://localhost:3001/api/posts',
+    method: 'POST',
+    data: body,
+    headers: cookies,
+  })
+
+  return response
+}
+
+export const getPostFormLabels = async (cookies: Record<string, string>) => {
+  const reposnse = await RequestSender.send<PostFormLabelsResponse>({
+    url: 'http://localhost:3001/api/posts/labels',
+    method: 'GET',
+    headers: cookies,
+  })
+
+  return await reposnse
 }

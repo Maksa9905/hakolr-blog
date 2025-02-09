@@ -1,12 +1,22 @@
-import { getPostById } from '#entities/posts/api'
+import {
+  DetailPostResponse,
+  PostFormLabelsResponse,
+  getPostById,
+} from '#entities/posts'
 import { getCookies } from '#shared/lib/getCookies.js'
-import { PageContextClient } from 'vike/types'
+import { PageContext } from 'vike/types'
 
-export const data = async (pageContext: PageContextClient) => {
+export interface PostPageData {
+  data: DetailPostResponse
+}
+
+export const data = async (pageContext: PageContext) => {
   const postId = pageContext.routeParams.id
-  const cookies = getCookies(pageContext?.headers?.cookie)
+  const cookies = pageContext?.headers?.cookie
 
-  const response = await getPostById(postId, cookies)
+  const response = await getPostById(postId, getCookies(cookies))
 
-  return response
+  return {
+    data: response,
+  }
 }

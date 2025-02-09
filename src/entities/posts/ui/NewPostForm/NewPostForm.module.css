@@ -1,0 +1,19 @@
+.title {
+  color: var(--black);
+  font-size: 1.5em;
+  font-weight: 500;
+  height: 50px;
+}
+
+.description {
+  color: var(--black);
+  font-size: 1.2em;
+  font-weight: 500;
+  height: 200px;
+  padding-top: 10px;
+}
+
+.submit-button {
+  padding: 10px;
+  margin-left: 15px;
+}
