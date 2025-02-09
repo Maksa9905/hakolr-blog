@@ -10,6 +10,7 @@ import { ViewToggleButton } from '../HTMLField/ViewToggleButton'
 import styles from './NewPostForm.module.css'
 import { setValue, changeHTMLFieldState } from '#store/post-form/events'
 import { $postForm } from '#store/post-form'
+import { createPostFx } from '#store/post-form/effects.js'
 
 export const NewPostForm = () => {
   const { title, description, content, HTMLFieldState, labels } =
@@ -53,7 +54,12 @@ export const NewPostForm = () => {
         />
         <Button
           label="Создать пост"
-          onClick={() => console.log(content)}
+          onClick={() =>
+            createPostFx({
+              postForm: $postForm.getState(),
+              cookies: document.cookie,
+            })
+          }
           disabled={!title || !description || !content}
           className={styles['submit-button']}
         />

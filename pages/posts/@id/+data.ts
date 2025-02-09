@@ -1,9 +1,5 @@
-import {
-  DetailPostResponse,
-  PostFormLabelsResponse,
-  getPostById,
-} from '#entities/posts'
-import { getCookies } from '#shared/lib/getCookies.js'
+import { DetailPostResponse, getPostById } from '#entities/posts'
+import { getPostFx } from '#store/post/effects.js'
 import { PageContext } from 'vike/types'
 
 export interface PostPageData {
@@ -14,7 +10,7 @@ export const data = async (pageContext: PageContext) => {
   const postId = pageContext.routeParams.id
   const cookies = pageContext?.headers?.cookie
 
-  const response = await getPostById(postId, getCookies(cookies))
+  const response = await getPostFx({ id: postId, cookies })
 
   return {
     data: response,
