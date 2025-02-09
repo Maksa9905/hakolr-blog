@@ -11,8 +11,12 @@ export type ButtonProps = Omit<
 export const Button = ({ label, ...props }: ButtonProps) => {
   return (
     <button
-      className={styles['button']}
       {...props}
+      className={
+        props.className
+          ? `${props.className} ${styles['button']} ${props.disabled ? styles.disabled : ''}`
+          : `${styles['button']} ${props.disabled ? styles.disabled : ''}`
+      }
     >
       {label}
     </button>

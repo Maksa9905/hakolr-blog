@@ -1,4 +1,4 @@
-import { Link } from '#shared/ui'
+import { Link, Paper } from '#shared/ui'
 import { useCallback, useEffect, useState } from 'react'
 import styles from './PostItem.module.css'
 import {
@@ -57,7 +57,7 @@ export const PostItem = ({
   )
 
   return (
-    <div className={styles.post}>
+    <Paper className={styles.post}>
       <h3 className={styles.title}>
         <Link href={'/posts/' + _id}>{title}</Link> -{' '}
         <Link href={'/user/' + authorId}>{authorName}</Link>
@@ -70,6 +70,6 @@ export const PostItem = ({
         onClick={handleActionClick}
         statisctics={statistics}
       />
-    </div>
+    </Paper>
   )
 }

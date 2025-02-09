@@ -1,0 +1,22 @@
+.HTMLView-container {
+  overflow: scroll;
+  height: 300px;
+}
+
+.HTMLField {
+  color: var(--black);
+  font-size: 1em;
+  padding-top: 10px;
+  height: 300px;
+  max-height: 500px;
+  min-height: 200px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.view-button {
+  padding: 10px;
+  margin-top: 20px;
+}

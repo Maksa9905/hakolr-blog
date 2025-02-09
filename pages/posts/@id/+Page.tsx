@@ -1,25 +1,14 @@
-import { DetailPostResponse } from '#entities/posts/api'
 import { PostPage } from '#pages/PostPage'
 import { PageContainer } from '#shared/ui'
-import { setPost } from '#store/post'
 import { useData } from 'vike-react/useData'
+import { PostPageData } from './+data'
+import { setPost } from '#store/post/events.js'
+import { mapDetailedPost } from '#entities/posts/index.js'
 
 export const Page = () => {
-  const {
-    reactions: { likes, dislikes, reactions },
-    ...data
-  } = useData<DetailPostResponse>()
+  const { data } = useData<PostPageData>()
 
-  setPost({
-    statistics: {
-      likes,
-      dislikes,
-    },
-    reactions,
-    authorId: data.author._id,
-    authorName: data.author.name,
-    ...data,
-  })
+  setPost(mapDetailedPost(data))
 
   return (
     <PageContainer>

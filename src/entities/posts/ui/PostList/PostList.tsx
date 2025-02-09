@@ -4,18 +4,12 @@ import styles from './PostList.module.css'
 import { $posts } from '#store/posts'
 
 export const PostList = () => {
-  const posts = useUnit($posts)
+  const { data: posts } = useUnit($posts)
 
   return (
     <div className={styles.postlist}>
-      {posts.map(({ author, ...post }) => (
-        <PostItem
-          {...post}
-          authorName={author.name}
-          statistics={post.reactions}
-          authorId={author._id}
-          reactions={post.reactions.reactions}
-        />
+      {posts.map((post) => (
+        <PostItem {...post} />
       ))}
     </div>
   )

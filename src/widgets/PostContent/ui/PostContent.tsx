@@ -1,15 +1,15 @@
 import styles from './PostContent.module.css'
-import { contentParser } from '../model/contentParser'
 import { $post } from '#store/post'
 import { useUnit } from 'effector-react'
+import { Paper } from '#shared/ui'
+import { contentParser } from '#entities/posts'
 
 export const PostContent = () => {
   const { content } = useUnit($post)
 
   return (
-    <div
-      dangerouslySetInnerHTML={{ __html: contentParser(content) }}
-      className={styles['post-content']}
-    />
+    <Paper className={styles['post-content']}>
+      <div dangerouslySetInnerHTML={{ __html: contentParser(content) }} />
+    </Paper>
   )
 }
