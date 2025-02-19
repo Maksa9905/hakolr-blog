@@ -1,0 +1,29 @@
+.followers-list {
+  height: fit-content;
+}
+
+.followers-list__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.show-more-button {
+  border: none;
+  background-color: transparent;
+}
+
+.show-more-button:hover {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}

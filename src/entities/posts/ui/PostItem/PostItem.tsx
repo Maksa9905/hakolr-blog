@@ -10,6 +10,8 @@ import { add_reaction } from '#features/add-reaction/index.js'
 import { getCookies } from '#shared/lib/getCookies.js'
 
 type Props = {
+  withAuthorName?: boolean
+  className?: string
   title: string
   description: string
   date: string
@@ -33,6 +35,8 @@ export const PostItem = ({
   statistics,
   reaction,
   authorName,
+  withAuthorName = true,
+  className: propClassName,
   authorId,
   _id,
 }: Props) => {
@@ -57,10 +61,15 @@ export const PostItem = ({
   )
 
   return (
-    <Paper className={styles.post}>
+    <div className={`${styles.post} ${propClassName || ''}`}>
       <h3 className={styles.title}>
-        <Link href={'/posts/' + _id}>{title}</Link> -{' '}
-        <Link href={'/user/' + authorId}>{authorName}</Link>
+        <Link href={'/posts/' + _id}>{title}</Link>
+        {withAuthorName && (
+          <>
+            {' '}
+            - <Link href={'/user/' + authorId}>{authorName}</Link>
+          </>
+        )}
       </h3>
       <p className={styles.content}>{description}</p>
       <p className={styles.date}>{new Date(date).toLocaleDateString()}</p>
@@ -70,6 +79,6 @@ export const PostItem = ({
         onClick={handleActionClick}
         statisctics={statistics}
       />
-    </Paper>
+    </div>
   )
 }

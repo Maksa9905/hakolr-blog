@@ -1,4 +1,4 @@
-import { HomePage } from '#pages/HomePage/ui'
+import { HomePage } from '#pages/HomePage/index.js'
 import { PageContainer } from '#shared/ui/index.js'
 
 export default function Page() {
