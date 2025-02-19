@@ -1,0 +1,14 @@
+.avatar-container {
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid var(--grey5);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  color: var(--grey9);
+  cursor: pointer;
+  grid-row: 1 / 3;
+  grid-column: 1;
+}

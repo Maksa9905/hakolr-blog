@@ -1,4 +1,4 @@
 export * from './PostList'
 export * from './PostItem'
-export * from './HTMLField'
-export * from './NewPostForm'
+export * from '../../../features/create-post/ui/HTMLField'
+export * from '../../../features/create-post/ui/NewPostForm'

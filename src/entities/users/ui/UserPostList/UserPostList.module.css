@@ -1,0 +1,33 @@
+.user-post-list {
+  height: fit-content;
+}
+
+.user-post-list__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.separator {
+  border-color: var(--grey1);
+}
+
+.show-more-button {
+  border: none;
+  background-color: transparent;
+}
+
+.show-more-button:hover {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 16px 0;
+}

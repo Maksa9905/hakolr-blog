@@ -30,6 +30,7 @@
     "react-dom": "^18.3.1",
     "react-froala-wysiwyg": "^4.3.1",
     "react-markdown": "^8.0.6",
+    "use-media-query-react": "^0.1.2",
     "vike-react": "^0.5.7"
   },
   "devDependencies": {

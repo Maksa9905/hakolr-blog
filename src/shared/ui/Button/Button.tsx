@@ -6,9 +6,10 @@ export type ButtonProps = Omit<
   'children'
 > & {
   label: string
+  endAdornment?: React.ReactNode
 }
 
-export const Button = ({ label, ...props }: ButtonProps) => {
+export const Button = ({ label, endAdornment, ...props }: ButtonProps) => {
   return (
     <button
       {...props}
@@ -19,6 +20,7 @@ export const Button = ({ label, ...props }: ButtonProps) => {
       }
     >
       {label}
+      {endAdornment}
     </button>
   )
 }

@@ -9,6 +9,7 @@ export interface PaginationProps {
   limit?: number
   maxLength?: number
   onChange?: (page: number) => void
+  className?: string
 }
 
 export const Pagination = ({
@@ -17,6 +18,7 @@ export const Pagination = ({
   limit = DEFAULT_LIMIT_PAGINATION,
   maxLength = 5,
   onChange,
+  className: propClassName,
 }: PaginationProps) => {
   const pages = Math.ceil(total / limit)
 
@@ -108,7 +110,7 @@ export const Pagination = ({
   )
 
   return (
-    <div className={styles['pagination-container']}>
+    <div className={`${styles['pagination-container']} ${propClassName}`}>
       {renderPaginationItems(pages, page)}
     </div>
   )
