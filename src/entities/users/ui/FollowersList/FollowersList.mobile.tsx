@@ -2,6 +2,12 @@ import { Button, Paper } from '#shared/ui'
 import { useCallback } from 'react'
 import { UserListItem } from '../UserListItem'
 import styles from './FollowersList.module.css'
+import { useUnit } from 'effector-react'
+import {
+  $has_followers_more,
+  $user_followers_mobile,
+} from '#store/user/user_mobile.js'
+import { get_followers_more } from '#store/user/events.js'
 
 export interface MobileFollowersListProps {
   className?: string
@@ -10,33 +16,36 @@ export interface MobileFollowersListProps {
 export const MobileFollowersList = ({
   className: propClassName,
 }: MobileFollowersListProps) => {
+  const followers = useUnit($user_followers_mobile)
+  const has_more = useUnit($has_followers_more)
+
   const className = `${styles['followers-list']} ${propClassName || ''}`
 
-  const handleUploadPosts = useCallback(() => {}, [])
+  const handleUploadPosts = useCallback(() => {
+    get_followers_more()
+  }, [])
 
   return (
     <Paper className={className}>
       <h2 className={styles['title']}>Подписчики</h2>
       <div className={styles['followers-list__inner']}>
-        {[...Array(5)].map((el) => (
+        {followers.map((follower) => (
           <>
             <UserListItem
-              key={el}
-              userId={'123'}
-              name="John Doe"
-              avatarUrl="https://i.imgur.com/1S2PiLC.png"
-              status="
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut modi cupiditate quo quas quae culpa nobis obcaecati cumque! Distinctio sequi quia quos dolorum quibusdam, modi cumque sunt dignissimos, ratione in dicta ipsum iste doloribus est corrupti facere illo dolorem possimus."
+              {...follower}
+              key={follower._id}
             />
             <hr className={styles['separator']} />
           </>
         ))}
       </div>
-      <Button
-        label="Показать еще..."
-        onClick={handleUploadPosts}
-        className={styles['show-more-button']}
-      />
+      {has_more && (
+        <Button
+          label="Показать еще..."
+          onClick={handleUploadPosts}
+          className={styles['show-more-button']}
+        />
+      )}
     </Paper>
   )
 }

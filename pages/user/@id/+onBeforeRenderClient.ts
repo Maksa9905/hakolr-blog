@@ -5,6 +5,8 @@ import {
   setPosts,
   setPostsPagination,
   setUser,
+  set_has_followers_more,
+  set_has_posts_more,
 } from '#store/user/events.js'
 import { PageContext } from 'vike/types'
 import { UserPageData } from './+data'
@@ -28,4 +30,7 @@ export const onBeforeRenderClient = (
 
   setFollowers(followersData)
   setFollowersPagination(followersPagination)
+
+  set_has_posts_more(postsData.length < postsPagination.total)
+  set_has_followers_more(followersData.length < followersPagination.total)
 }

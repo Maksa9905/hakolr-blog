@@ -91,3 +91,15 @@ export const get_posts = async (
 
   return response.data
 }
+
+export const create_user = async (body: {
+  email: string
+  password: string
+  name: string
+}) => {
+  await axios.post(`http://localhost:3001/api/register`, {
+    email: body.email,
+    password: body.password,
+    name: body.name,
+  })
+}

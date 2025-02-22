@@ -7,7 +7,7 @@ export interface UserListItemProps {
   avatarUrl: string
   name: string
   status: string
-  userId: string
+  _id: string
 }
 
 export const UserListItem = ({
@@ -15,7 +15,7 @@ export const UserListItem = ({
   avatarUrl,
   name,
   status,
-  userId,
+  _id: userId,
 }: UserListItemProps) => {
   const className = `${styles['user-list-item']} ${propClassName || ''}`
 
