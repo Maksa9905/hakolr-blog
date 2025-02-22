@@ -1,4 +1,4 @@
-import { TextField, Button } from '#shared/ui'
+import { TextField, Button, Link } from '#shared/ui'
 import { useCallback } from 'react'
 import styles from './LoginPage.module.css'
 import { HakolrBlogIcon } from '#shared/icons/HakolrBlogIcon'
@@ -38,9 +38,16 @@ export const LoginPage = () => {
         <TextField
           name="password"
           label="Пароль"
+          type="password"
         />
         <Button label="Войти" />
       </form>
+      <Link
+        className={styles['register-link']}
+        href="/register"
+      >
+        Зарегистрироваться
+      </Link>
     </div>
   )
 }

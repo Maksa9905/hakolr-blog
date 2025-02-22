@@ -1,10 +1,4 @@
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.login-page {
+.register-page {
   display: flex;
   gap: 40px;
   flex-direction: column;
@@ -13,7 +7,13 @@
   height: 100vh;
 }
 
-.register-link {
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-link {
   text-align: center;
   font-size: 14px;
   color: var(--grey8);

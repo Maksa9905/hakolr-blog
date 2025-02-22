@@ -7,10 +7,7 @@ export enum TextFieldVariant {
   bottomlined = 'bottomlined',
 }
 
-export type TextFieldProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'type'
-> & {
+export type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string
   variant?: keyof typeof TextFieldVariant
   maxLength?: number
@@ -32,7 +29,6 @@ export const TextField = ({
       style={{ width: width || 'auto' }}
       placeholder={label || 'Введите текст'}
       className={className}
-      type="text"
     />
   )
 }

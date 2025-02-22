@@ -30,7 +30,35 @@ export const getPostsFx = createEffect(
   },
 )
 
+export const getMobilePostsFx = createEffect(
+  async (params: {
+    userId: string
+    pagination?: Partial<PaginationType>
+    cookies?: string
+  }) => {
+    return await get_posts(
+      params.userId,
+      params.pagination,
+      getCookies(params.cookies),
+    )
+  },
+)
+
 export const getFollowersFx = createEffect(
+  async (params: {
+    userId: string
+    pagination?: Partial<PaginationType>
+    cookies?: string
+  }) => {
+    return await get_followers(
+      params.userId,
+      params.pagination,
+      getCookies(params.cookies),
+    )
+  },
+)
+
+export const getMobileFollowersFx = createEffect(
   async (params: {
     userId: string
     pagination?: Partial<PaginationType>

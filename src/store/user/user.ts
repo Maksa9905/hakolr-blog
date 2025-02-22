@@ -23,8 +23,6 @@ import {
 } from './effects'
 import { DEFAULT_PAGINATION } from '#shared/lib/consts.js'
 import { mapPost } from '#entities/posts/index.js'
-import { subscribe } from '#features/subscribe/api/api.js'
-import { getCookies } from '#shared/lib/getCookies.js'
 
 export const $user = createStore(defaultUserValues)
 export const $user_posts = createStore(defaultUserPostsValues)

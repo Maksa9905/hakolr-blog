@@ -11,3 +11,9 @@ export const setPostsPagination = createEvent<PaginationType>()
 export const setFollowersPagination = createEvent<PaginationType>()
 
 export const setMyInfo = createEvent<DetailedUserResponse | null>()
+
+export const get_posts_more = createEvent<string | undefined>()
+export const get_followers_more = createEvent()
+
+export const set_has_posts_more = createEvent<boolean>()
+export const set_has_followers_more = createEvent<boolean>()
